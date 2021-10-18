@@ -1,21 +1,34 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Header from './components/Shared/Header/Header';
-import HeroSlider from './components/Home/HeroSlider/HeroSlider';
-import Services from './components/Home/Services/Services';
-import Reviews from './components/Home/Reviews/Reviews'
-import Departments from './components/Home/Departments/Departments';
-import Doctors from './components/Home/Doctors/Doctors';
+import Footer from './components/Shared/Footer/Footer';
+import Login from './components/Login/Login/Login';
+import Home from './components/Home/Home/Home';
+import NotFound from './components/NotFound/NotFound';
+import Registration from './components/Login/Registration/Registration';
 
 function App() {
   return (
     <BrowserRouter>
       <Header></Header>
-      <HeroSlider></HeroSlider>
-      <Doctors></Doctors>
-      <Services></Services>
-      <Reviews></Reviews>
-      <Departments></Departments>
+      <Switch>
+        <Route exact path="/">
+          <Home></Home>
+        </Route>
+        <Route path="/home">
+          <Home></Home>
+        </Route>
+        <Route path="/login">
+          <Login></Login>
+        </Route>
+        <Route path="/registration">
+          <Registration></Registration>
+        </Route>
+        <Route path="*">
+          <NotFound></NotFound>
+        </Route>
+      </Switch>
+      <Footer></Footer>
     </BrowserRouter>
   );
 }
