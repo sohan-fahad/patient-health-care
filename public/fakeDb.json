@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Mustafizur Rahman",
+        "graduation": "MBBS, MS, MD (Chittagong Medical College)",
+        "Specialties": "Ear, Nose and Throat",
+        "Fees": "500",
+        "description": "DNB (Diplomate of National Board) degree is considered equivalent to the MD and MS degrees. To pursue DNB courses, aspirants need to qualify the NEET PG entrance test conducted by the National Board of Examinations (NBE). The duration of the DNB course is 3 years of post-MBBS residency training in teaching hospitals recognised by the board. NBE awards the Diplomate of National Board in 14 broad specialities. The holders of DNB are employed as specialist’s or faculty in any hospital and training institution. These post-MBBS residency programmes are available in the below mentioned specialities.",
+        "img": "https://i.ibb.co/SNpQ1H7/doctor1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Shamim Fahad",
+        "graduation": "MBBS, BAMS, MD (Khulna Medical College)",
+        "Specialties": "General Surgery",
+        "Fees": "600",
+        "description": "General Surgery is a discipline of surgery having a central core of knowledge embracing anatomy, physiology, metabolism, immunology, nutrition, pathology, wound healing, shock and resuscitation, intensive care, and neoplasia, which are common to all surgical specialties.",
+        "img": "https://i.ibb.co/4F6Y1bh/doctor2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Abdul Khalek",
+        "graduation": "MBBS, MS, BHMS(Comilla Medical College)",
+        "Specialties": "Ophthalmology",
+        "Fees": "700",
+        "description": "Ophthalmologists diagnose and treat injuries, infections, diseases, and disorders of the eye. Treatments can include medication taken orally (by mouth) or topically (in the eye), surgery, cryotherapy (freeze treatment), and chemotherapy (chemical treatment).",
+        "img": "https://i.ibb.co/pdWLxcz/doctor3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "MH Juwel",
+        "graduation": "MBBS, BPT, MD(Dhaka Medical College)",
+        "Specialties": "Orthopaedics",
+        "Fees": "500",
+        "description": "Orthopaedics is the medical specialty that focuses on injuries and diseases of your body's musculoskeletal system. This complex system, which includes your bones, joints, ligaments, tendons, muscles, and nerves, allows you to move, work, and be active. ... And anybody can break a bone.",
+        "img": "https://i.ibb.co/rHVp1rZ/doctor4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Imran Rony",
+        "graduation": "MBBS, MS, BHMS(Rajshahi Medical College)",
+        "Specialties": "Obstetrics and Gynaecology",
+        "Fees": "700",
+        "description": "Obstetrics and gynaecology (British English) or obstetrics and gynecology (American English) is the medical specialty that encompasses the two subspecialties of obstetrics (covering pregnancy, childbirth, and the postpartum period) and gynecology (covering the health of the female reproductive system – vagina, uterus.",
+        "img": "https://i.ibb.co/YWRXsYF/doctor5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Daudul Islam",
+        "graduation": "MBBS, BPT, MS(Rangpur Medical College)",
+        "Specialties": "Dermatology, Venerology and Leprosy",
+        "Fees": "800",
+        "description": "M. D. in Dermatology, Venerology & Leprosy is a Clinical Speciality course offered by the Amrita School of Medicine. Doctor of Medicine in Dermatology, Venerology & Leprosy is a three-year postgraduation course. Dermatology is the branch of medicine dealing with the hair, nails, skin and its diseases.",
+        "img": "https://i.ibb.co/bRKnTDt/doctor6.jpg"
+    }
+]
