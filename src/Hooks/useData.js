@@ -1,11 +1,16 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 const useData = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+    const [doctors, setDoctors] = useState()
+    useEffect(()=>{
+        fetch('./doctorsDB.json')
+        .then(res => res.json())
+        .then(data =>setDoctors(data))
+    },[])
+
+    return {
+        doctors
+    }
 };
 
 export default useData;

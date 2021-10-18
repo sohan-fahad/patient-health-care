@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+.Departments {
+    margin-top: 70px;
+}
+
+.Departments-title {
+    color: #dd0148;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 0 15px;
+    margin: 0px;
+    text-align: center;
+}

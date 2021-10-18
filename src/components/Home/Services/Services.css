@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 
-#services {
+.services {
     margin-top: 5vw;
 }
-.services-title {
+.doctors-title {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
 }

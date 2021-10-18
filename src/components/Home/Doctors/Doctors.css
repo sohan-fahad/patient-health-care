@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+.doctors {
+    margin-top: 70px;
+    width: 100%;
+}
+.doctors-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+.title-para {
+    color: gray;
+    font-weight: 400;
+    margin-top: -10px;
+}
+.global-color1 {
+    color: #dd0148;
+}
+.global-color2 {
+    color: #0494c3;
+}
+
+.doctor-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media only screen and (max-width: 990px) {
+    .doctor-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media only screen and (max-width: 765px) {
+    .doctor-card {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+}
+}
