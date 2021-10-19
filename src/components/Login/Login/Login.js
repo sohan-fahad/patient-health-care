@@ -5,6 +5,7 @@ import './Login.css'
 
 const Login = () => {
     const {handleLoginSubmit, singInUsingGoole, error} = useAuth()
+
     return (
         <div className='Login'>
             <div  className="login-container text-center ">

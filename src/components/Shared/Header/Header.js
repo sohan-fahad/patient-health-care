@@ -21,19 +21,15 @@ const Header = () => {
                     <Nav.Link as={HashLink} to="/home#reviews">Reviews</Nav.Link>
                     <Nav.Link as={HashLink} to="/home#department">Department</Nav.Link>
                     <Nav.Link as={HashLink} to="/home#experts">About</Nav.Link>
-                    <Nav.Link as={HashLink} to="/home#experts">Contant</Nav.Link>
-                    {user.email ? <Nav.Link as={Link} className="btn-light text-dark" to="/home"  onClick={logOut}>Logout</Nav.Link>
+                    <Nav.Link as={HashLink} to="/home#experts">Contact</Nav.Link>
+                    {user.email ? <Nav.Link as={Link} className="btn-light text-dark me-2" to="/home" onClick={logOut}>Logout</Nav.Link>
                         :
-                        <Nav.Link as={Link} className="btn-light text-dark" to="/login">Login</Nav.Link>}
-                    {/* {
-                        user.email ?
-                            <Button variant="info" onClick={logOut}>Logout</Button>
-                            :
-                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                    } */}
-                    {/* <Navbar.Text>
-                        {user?.displayName}
-                    </Navbar.Text> */}
+                        <Nav.Link as={Link} className="btn-light text-dark me-2" to="/login">Login</Nav.Link>
+                    }
+                    <Navbar.Text>
+                        {user?.displayName || user.name}
+                    </Navbar.Text>
+
                 </Navbar.Collapse>
             </Container>
         </Navbar>

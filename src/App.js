@@ -10,6 +10,7 @@ import AuthProvider from './context/AuthProvider';
 import EmailVarify from './components/EmailVerify/EmailVarify';
 import DoctorDetails from './components/DoctorDetails/DoctorDetails/DoctorDetails';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
           <Route path="/emailverify">
             <EmailVarify></EmailVarify>
           </Route>
+          <PrivateRoute path="/contact">
+            <Contact></Contact>
+          </PrivateRoute>
           <Route path="*">
             <NotFound></NotFound>
           </Route>

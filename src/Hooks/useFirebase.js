@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 import InitialAuthentication from '../Firebase/Firebase.init';
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, sendEmailVerification, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { useHistory, useLocation } from 'react-router';
 
 InitialAuthentication()
 const useFirebase = () => {
     const auth = getAuth()
+    const history = useHistory()
+    const location = useLocation()
+    const redirect_url = location.state?.from || "/home" 
 
     const [displayName, setDisplayName] = useState('')
     const [user, setUser] = useState({})
@@ -16,7 +20,6 @@ const useFirebase = () => {
 
     const handleName = e => {
         setDisplayName(e.target.value)
-        console.log(e.target.value)
     }
     const handleEmail = e => {
         setEmail(e.target.value)
@@ -32,35 +35,16 @@ const useFirebase = () => {
         if (password.length < 6) {
             setError("Password should be more than 6 character")
         }
-        registration(email, password, phoneNumber, displayName)
-        setError("")
-
-    }
-
-    const handleLoginSubmit = e => {
-        e.preventDefault();
-        if (password.length < 6) {
-            setError("Password should be more than 6 character")
-        }
-        else {
-            login(email, password)
-            setError("")
-        }
-    }
-
-    // Function for registration
-    const registration = (userEmail, userPassword, userPhoneNumber, userDisplayName) => {
-        setIsLoading(true)
-        setError("")
-        createUserWithEmailAndPassword(auth, userEmail, userPassword)
+        console.log("reg", isLoading)
+        createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const userInfo = result.user
                 setUser(userInfo)
                 verifyEmail()
-                console.log(userInfo)
+                setError("")
                 if (userInfo) {
-                    userInfo.displayName = userDisplayName;
-                    userInfo.phoneNumber = userPhoneNumber;
+                    userInfo.displayName = displayName;
+                    userInfo.phoneNumber = phoneNumber;
                 }
             })
             .catch((error) => {
@@ -68,44 +52,56 @@ const useFirebase = () => {
                 const errorMessage = error.message;
                 setError(errorMessage, errorCode)
             })
-            .finally(() => setIsLoading(false))
+            .finally(() => {
+                setIsLoading(false)
+            })
+    }
+
+    const handleLoginSubmit = e => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const userInfo = result.user;
+                console.log(userInfo)
+                setUser(userInfo)
+            })
+            .catch(err => {
+                setError(err.message)
+            })
+        setError("")
 
     }
+
+    // Function for registration
+
 
     // Function for verify email
     const verifyEmail = () => {
         sendEmailVerification(auth.currentUser)
             .then(() => { })
+            .catch((err) => {
+                const error = err.message;
+                setError(error)
+            })
     }
 
-    // function for login
-    const login = (userEmail, userPassword) => {
-        setIsLoading(true)
-        signInWithEmailAndPassword(auth, userEmail, userPassword)
-            .then(result => {
-                const userInfo = result.user;
-                setUser(userInfo)
-            })
-            .catch(error => {
-                setError(error.message, error.code)
-            })
-            .finally(() => setIsLoading(false))
-    }
 
     const singInUsingGoole = () => {
         setError("")
         const googleProvider = new GoogleAuthProvider();
         setIsLoading(true)
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                console.log(result.user)
-                setError("")
-            })
-            .catch(error => {
-                setError(error.message)
+        return signInWithPopup(auth, googleProvider)
+        .then(result => {
+            console.log(result.user)
+            setError("")
+            
+        })
+        .catch(error => {
+            setError(error.message)
 
-            })
-            .finally(() => setIsLoading(false))
+        })
+        .finally(() => setIsLoading(false))
+        
     }
     // observ user state
     useEffect(() => {
@@ -116,8 +112,8 @@ const useFirebase = () => {
             else {
                 setUser({})
             }
+            setIsLoading(false)
         })
-        setIsLoading(true)
         return () => unsubscribe;
     }, [])
 
@@ -144,7 +140,7 @@ const useFirebase = () => {
         handleRagisterSubmit,
         handleLoginSubmit,
         logOut,
-        singInUsingGoole
+        singInUsingGoole,
     }
 };
 
