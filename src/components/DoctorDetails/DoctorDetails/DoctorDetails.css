@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+.DoctorDetails{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details-contaier {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.doctor-img {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doctor-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-appoinment {
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+    color: #dd0148;
+    border: 1px solid #dd0148;
+    padding: 5px 15px;
+    display: block;
+    width: 60%;
+    text-align: center;
+    margin-top: 15px;
+    transition: 0.2s ease-in;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.btn-appoinment:hover {
+    background-color: #dd0148;
+    color: #ffff;
+}
+
+.text-blue {
+    color: #0494c3;
+}
+
+.text-red {
+    color: #dd0148;
+}
+
+@media only screen and (max-width: 990px) {
+    .btn-appoinment {
+        width: 90%;
+    }
+    .DoctorDetails {
+        height: 100vh;
+    }
+    .details-contaier {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    .DoctorDetails{
+        height: auto;
+        text-align: center;
+    }
+    .details-contaier {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .doctor-img{
+        margin: 0 auto;
+    }
+    .doctor-info {
+        margin-top: 15px;
+    }
+    .btn-appoinment {
+        margin: 0 auto;
+    }
+}

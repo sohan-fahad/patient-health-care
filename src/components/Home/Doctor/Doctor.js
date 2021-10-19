@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import './Doctor.css'
 
 const Doctor = ({ doctor }) => {
-    const { name, graduation, specialties, fee, img } = doctor
-    console.log(doctor)
+    const { name, graduation, specialties, fee, img, id } = doctor
     return (
         <div className="text-center doctor">
             <img src={img} alt="" className="w-100 img-fluid doctor-img" />
@@ -12,7 +11,7 @@ const Doctor = ({ doctor }) => {
             <p className="mb-0 global-color2">{specialties}</p>
             <p className="mb-1">{graduation}</p>
             <h5 className="fw-bold">Appointment Fee: {fee}৳</h5>
-            <Link>
+            <Link to={`/details/${id}`}>
                 <button className="btn-details">Details</button>
             </Link>
         </div>
