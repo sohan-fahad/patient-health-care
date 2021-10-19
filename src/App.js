@@ -37,12 +37,12 @@ function App() {
           <Route path="/emailverify">
             <EmailVarify></EmailVarify>
           </Route>
-          <Route path="/contact">
+          <PrivateRoute path="/contact">
             <Contact></Contact>
-          </Route>
-          <Route path="/about">
+          </PrivateRoute>
+          <PrivateRoute path="/about">
             <About></About>
-          </Route>
+          </PrivateRoute>
           <Route path="*">
             <NotFound></NotFound>
           </Route>

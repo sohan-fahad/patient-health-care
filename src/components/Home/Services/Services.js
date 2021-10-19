@@ -4,8 +4,8 @@ import './Services.css'
 
 const Services = () => {
     return (
-        <Container className="services" id="doctors&services">
-            <h1 className="services-title fw-bold text-center mt-3">Services <span className="global-color1">We</span> <span className="global-color2">Provide</span></h1>
+        <Container className="services" id="healthCare">
+            <h1 className="services-title fw-bold text-center mt-3">We<span className="global-color1"> Offer The </span> <span className="global-color2">Best Health</span> Care</h1>
             <Row md={2} lg={3} xs={1} className="service-cards text-center g-4">
                 <Col className='p-3 service-card'>
                     <div className="global-color2">

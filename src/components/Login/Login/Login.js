@@ -5,7 +5,7 @@ import './Login.css'
 import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
-    const { handleLoginSubmit, singInUsingGoole, error, setUser, setError, setIsLoading, isLoading } = useAuth()
+    const { handleLoginSubmit, singInUsingGoole, error, setError } = useAuth()
 
     const history = useHistory()
     const location = useLocation()

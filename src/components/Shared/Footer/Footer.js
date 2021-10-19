@@ -24,8 +24,8 @@ const Footer = () => {
                     <div className="route-nav ">
                         <h5 className="fw-bold text-white text-primary">Contact Us</h5>
                         <img src={footerNavIcon} alt="" className="my-3" />
-                        <Nav.Link className="text-white px-0 py-1">About</Nav.Link>
-                        <Nav.Link className="text-white px-0 py-1">Contact</Nav.Link>
+                        <Nav.Link className="text-white px-0 py-1" as={HashLink} to="/about">About</Nav.Link>
+                        <Nav.Link className="text-white px-0 py-1" as={HashLink} to="/contact">Contact</Nav.Link>
                         <div>
                             <i className="fab fa-facebook-square me-3"></i>
                             <i className="fab fa-twitter-square me-3"></i>
