@@ -11,6 +11,7 @@ import EmailVarify from './components/EmailVerify/EmailVarify';
 import DoctorDetails from './components/DoctorDetails/DoctorDetails/DoctorDetails';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Contact from './components/Contact/Contact';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -36,9 +37,12 @@ function App() {
           <Route path="/emailverify">
             <EmailVarify></EmailVarify>
           </Route>
-          <PrivateRoute path="/contact">
+          <Route path="/contact">
             <Contact></Contact>
-          </PrivateRoute>
+          </Route>
+          <Route path="/about">
+            <About></About>
+          </Route>
           <Route path="*">
             <NotFound></NotFound>
           </Route>

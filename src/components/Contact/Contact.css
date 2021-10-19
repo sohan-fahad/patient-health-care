@@ -1,3 +1,13 @@
+.contact_area {
+    background-color: #dd0148;
+    padding: 50px 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .contact_area .inner_contact {
     width: 900px;
     max-width: 100%;
@@ -10,27 +20,51 @@
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     font-size: 36px;
-    border: 1px solid #dd0148;
 }
+
+/* Contacr Area  */
+
+.main_contact form {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+.main_contact input {
+    background-color: #fff;
+    border: none;
+    width: 46%;
+    padding: 15px 3%;
+    float: left;
+    margin: 0 1% 2%;
+    border-radius: 5px;
+}
+
+.contact_area .main_contact textarea{
+    background-color: #fff;
+    border: none;
+    width: 94%;
+    padding: 4% 2%;
+    float: left;
+    margin: 0 1% 2%;
+    border-radius: 5px;
+}
+/* . */
 
 .btn-contact {
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 10px;
     color: #dd0148;
-    border: 1px solid #dd0148;
-    padding: 5px 15px;
+    padding: 10px 15px;
     display: block;
     width: 60%;
+    margin: 0 auto;
     text-align: center;
     margin-top: 15px;
     transition: 0.2s ease-in;
     font-weight: 500;
     font-family: 'Raleway', sans-serif;
     letter-spacing: 0.5px;
-}
-
-.btn-contact:hover {
-    background-color: #dd0148;
-    columns: #fff;
+    border: none;
 }

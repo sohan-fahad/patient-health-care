@@ -4,19 +4,19 @@ import './Contact.css'
 const Contact = () => {
     return (
         <div>
-            <div className="inner_contact">
-                <h2>Quick Contact</h2>
-                <div className="main_contact">
-                    <form action="">
-                        <input type="text" placeholder="Name*" />
-                        <input type="email" placeholder="email*" />
-                        <input type="text" placeholder="Phone*" />
-                        <input type="text" placeholder="Company" />
-                        <textarea placeholder="Message"></textarea>
-                        <input type="submit" value="Contact Now" className="btn-contact"/>
-                    </form>
+            <section className="contact_area">
+                <div className="inner_contact">
+                    <h2>Contact With Us!</h2>
+                    <div className="main_contact">
+                        <form>
+                            <input type="text" placeholder="Name*" />
+                            <input type="email" placeholder="email*" />
+                            <textarea placeholder="Message"></textarea>
+                            <button type="submit" className="btn-contact">Submit</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };

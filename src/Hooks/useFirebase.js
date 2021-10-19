@@ -1,14 +1,10 @@
 import { useEffect, useState } from 'react';
 import InitialAuthentication from '../Firebase/Firebase.init';
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, sendEmailVerification, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { useHistory, useLocation } from 'react-router';
 
 InitialAuthentication()
 const useFirebase = () => {
     const auth = getAuth()
-    const history = useHistory()
-    const location = useLocation()
-    const redirect_url = location.state?.from || "/home" 
 
     const [displayName, setDisplayName] = useState('')
     const [user, setUser] = useState({})
@@ -91,17 +87,16 @@ const useFirebase = () => {
         const googleProvider = new GoogleAuthProvider();
         setIsLoading(true)
         return signInWithPopup(auth, googleProvider)
-        .then(result => {
-            console.log(result.user)
-            setError("")
-            
-        })
-        .catch(error => {
-            setError(error.message)
+        // .then(result => {
+        //     console.log(result.user)
+        //     setError("")
+        // })
+        // .catch(error => {
+        //     setError(error.message)
 
-        })
-        .finally(() => setIsLoading(false))
-        
+        // })
+        // .finally(() => setIsLoading(false))
+
     }
     // observ user state
     useEffect(() => {
@@ -127,6 +122,8 @@ const useFirebase = () => {
 
     return {
         user,
+        setUser,
+        setError,
         isLoading,
         displayName,
         error,
