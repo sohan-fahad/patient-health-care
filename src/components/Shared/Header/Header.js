@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top" className="navBar">
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand as={HashLink} to="/">
                     <img src={logo} alt="Patient Health Care" className="logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle />
