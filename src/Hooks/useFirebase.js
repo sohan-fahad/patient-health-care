@@ -14,18 +14,25 @@ const useFirebase = () => {
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(true)
 
+    // function for set name in state
     const handleName = e => {
         setDisplayName(e.target.value)
     }
+    // function for set email in state
     const handleEmail = e => {
         setEmail(e.target.value)
     }
+    // function for set password in state
     const handlePhoneNumber = e => {
         setPhoneNumber(e.target.value)
     }
+
+    // function for set password in state
     const handlePassword = e => {
         setPassword(e.target.value)
     }
+
+    // Function for registration
     const handleRagisterSubmit = e => {
         e.preventDefault();
         if (password.length < 6) {
@@ -52,14 +59,13 @@ const useFirebase = () => {
                 setIsLoading(false)
             })
     }
-
+// function for login
     const handleLoginSubmit = e => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const userInfo = result.user;
                 console.log(userInfo)
-                setUser(userInfo)
             })
             .catch(err => {
                 setError(err.message)
@@ -68,7 +74,6 @@ const useFirebase = () => {
 
     }
 
-    // Function for registration
 
 
     // Function for verify email
@@ -87,15 +92,6 @@ const useFirebase = () => {
         const googleProvider = new GoogleAuthProvider();
         setIsLoading(true)
         return signInWithPopup(auth, googleProvider)
-        // .then(result => {
-        //     console.log(result.user)
-        //     setError("")
-        // })
-        // .catch(error => {
-        //     setError(error.message)
-
-        // })
-        // .finally(() => setIsLoading(false))
 
     }
     // observ user state

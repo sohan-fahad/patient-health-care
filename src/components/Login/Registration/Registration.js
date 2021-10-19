@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import './Registration.css'
 
 const Registration = () => {
     // destrucer the value from context object
     const { handleName, handlePhoneNumber, handleEmail, handlePassword, handleRagisterSubmit, error, singInUsingGoole} = useAuth()
+
     return (
         <div className='Registration'>
             <div className="registration-container text-center ">

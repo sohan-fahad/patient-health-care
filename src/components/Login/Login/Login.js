@@ -5,6 +5,7 @@ import './Login.css'
 import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
+    // destrucer data from useAuth
     const { handleLoginSubmit, singInUsingGoole, error, setError } = useAuth()
 
     const history = useHistory()
