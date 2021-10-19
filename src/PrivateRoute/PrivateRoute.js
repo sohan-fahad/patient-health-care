@@ -8,7 +8,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     console.log("user", user)
     console.log("true or false", isLoading)
     if (isLoading) {
-        <div className="d-flex align-items-center justify-content-center">
+        return <div className="d-flex align-items-center justify-content-center">
             <Spinner animation="border" variant="primary" />
         </div>
     }
@@ -16,7 +16,7 @@ const PrivateRoute = ({ children, ...rest }) => {
         <Route
             {...rest}
             render={
-                ({ location }) => user.email ? children : <Redirect
+                ({ location }) => user?.email ? children : <Redirect
                     to={{
                         pathname: "/registration",
                         state: { from: location }

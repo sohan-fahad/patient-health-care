@@ -42,7 +42,10 @@ const useFirebase = () => {
         if (password.length < 6) {
             setError("Password should be more than 6 character")
         }
-        login(email, password)
+        else {
+            login(email, password)
+            setError("")
+        }
     }
 
     // Function for registration
@@ -77,7 +80,6 @@ const useFirebase = () => {
 
     // function for login
     const login = (userEmail, userPassword) => {
-        setError("")
         setIsLoading(true)
         signInWithEmailAndPassword(auth, userEmail, userPassword)
             .then(result => {
@@ -87,7 +89,7 @@ const useFirebase = () => {
             .catch(error => {
                 setError(error.message, error.code)
             })
-            .finally(()=>setIsLoading(false))
+            .finally(() => setIsLoading(false))
     }
 
     const singInUsingGoole = () => {
