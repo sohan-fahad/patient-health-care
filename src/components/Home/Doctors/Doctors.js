@@ -12,7 +12,7 @@ const Doctors = () => {
     }, [])
     return (
         <Container className='doctors' id="doctors">
-            <h1 className="doctors-title fw-bold text-center">Welcome to <span className="global-color1">Patient</span> <span className="global-color2">Heath Care</span></h1>
+            <h1 className="doctors-title fw-bold text-center">We Have <span className="global-color1">The Best Medical</span> <span className="global-color2">Specialist In Town</span></h1>
             <p className='title-para text-center'>Our Medical Specialist Care About You & Your Family</p>
             <div className="doctor-card">
                 {

@@ -13,7 +13,6 @@ const DoctorDetails = () => {
             .then(data => setDoctors(data))
     }, [])
 
-    console.log("sdfsa", doctors)
     const doctor = doctors?.find(doctor => doctor.id == doctorId)
 
     // const {name, img, description, fee, graduation, specialties} = doctor;

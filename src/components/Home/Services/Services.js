@@ -1,37 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import Service from '../Service/Service';
 import './Services.css'
 
 const Services = () => {
+    const [services, setServices] = useState()
+    useEffect(() => {
+        fetch("/servicesDB.json")
+            .then(res => res.json())
+            .then(data => setServices(data))
+    }, [])
     return (
-        <Container className="services" id="healthCare">
-            <h1 className="services-title fw-bold text-center mt-3">We<span className="global-color1"> Offer The </span> <span className="global-color2">Best Health</span> Care</h1>
-            <Row md={2} lg={3} xs={1} className="service-cards text-center g-4">
-                <Col className='p-3 service-card'>
-                    <div className="global-color2">
-                        <i className="fas fa-user-md"></i>
-                    </div>
-                    <h4 className="mt-2">Health Care Professionals</h4>
-                    <p className="mt-3">The healthcare workforce comprises a wide variety of professions and occupations who provide some type of healthcare service, including such direct care practitioners as physicians, nurse practitioners, physician assistants, nurses, respiratory therapists, dentists, pharmacists, speech-language pathologist, physical therapists, occupational therapists, physical and behavior therapists</p>
-                    <button className="btn-doctor1">Get Doctors</button>
-                </Col>
-                <Col className='p-3 service-card'>
-                    <div className="global-color1">
-                        <i className="fas fa-briefcase-medical "></i>
-                    </div>
-                    <h4 className="mt-2">Diagnostic Service</h4>
-                    <p className="mt-3">The healthcare workforce comprises a wide variety of professions and occupations who provide some type of healthcare service, including such direct care practitioners as physicians, nurse practitioners, physician assistants, nurses, respiratory therapists, dentists, pharmacists, speech-language pathologist, physical therapists, occupational therapists, physical and behavior therapists</p>
-                    <button className="btn-doctor2">Get Your Service</button>
-                </Col>
-                <Col className='p-3 service-card'>
-                    <div className="global-color2">
-                        <i className="fas fa-stethoscope"></i>
-                    </div>
-                    <h4 className="mt-2">Letest Technologiest</h4>
-                    <p className="mt-3">The healthcare workforce comprises a wide variety of professions and occupations who provide some type of healthcare service, including such direct care practitioners as physicians, nurse practitioners, physician assistants, nurses, respiratory therapists, dentists, pharmacists, speech-language pathologist, physical therapists, occupational therapists, physical and behavior therapists</p>
-                    <button className="btn-doctor1">Details</button>
-                </Col>
-            </Row>
+        <Container className='services' id="services">
+            <h1 className="service-title fw-bold text-center mb-3">Welcome to <span className="global-color1">The Patient</span> <span className="global-color2">Health Care</span></h1>
+            <p className='title-para text-center'>We Provide You The Best Services With Best Offer</p>
+            <div className="service-card">
+                {
+                    services?.map(service => <Service key={service.id} service={service}></Service>)
+                }
+            </div>
         </Container>
     );
 };

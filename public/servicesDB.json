@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "MRI",
+        "Duration": "24Hours",
+        "machine": "Most advanced 3.0 T MRI",
+        "fee": "5000",
+        "description": "With its free-breathing imaging applications and advanced motion correction software, SIGNA Pioneer will compensate for patient movement and allow complete free-breathing body imaging. This includes dynamic contrast enhanced MR imaging, improving dramatically patient experience but also image quality in very challenging situations.",
+        "img": "https://st2.depositphotos.com/4826249/7208/i/600/depositphotos_72083543-stock-photo-mri-scanner.jpg"
+    },
+    {
+        "id": 2,
+        "name": "CT Scan",
+        "Duration": "8Hours",
+        "machine": "128/500 option slice CT Scanner",
+        "fee": "8000",
+        "description": "SilentSuite, which is both revolutionary and proprietary, the SIGNA Pioneer reduces dB levels from an ear-splitting, motorcycle-level 91dB to within 3dB of scan room ambient noise. Along with this dramatic advance comes the first-ever complete Silent Neuro Exam that includes Diffusion Weighted Imaging (DWI). In addition, we have expanded our Silent imaging capability beyond neuro imaging to musculoskeletal and spine imaging..",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/UPMCEast_CTscan.jpg/1200px-UPMCEast_CTscan.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Digital X ray",
+        "Duration": "12Hours",
+        "machine": "1000 mA fully digital Xray",
+        "fee": "6000",
+        "description": "Type 4343A is a cassette-sized flat panel detector with high performance. Battery stands by for at least 8 hours. The transmission speed of it up to 1300 Mbps based on 4343A supporting IEEE 802.11ac. The detector output high quality images with high DQE and resolution. Equipped with highly sensitive AED function, it is easily synchronized with any type of generators.",
+        "img": "https://www.medicaldevice-network.com/wp-content/uploads/sites/11/2019/04/2l-Image-Multix-Impact-Digital-X-ray-System.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Echocardiography ",
+        "Duration": "10Hours",
+        "machine": "Pediatric echocardiography including MicroTEE ",
+        "fee": "7000",
+        "description": " Dynamic organ and tumor assessment in real time With Affiniti 70, you can easily add contrast-enhanced ultrasound (CEUS) to nearly any exam. Affiniti 70 provides immediate optimization of CEUS studies and exceptional performance across multiple agents and applications, which allows for dynamic assessment of organ and tumor perfusion in real time. ",
+        "img": "https://cdn.ultrasoundsupply.com/wp-content/uploads/2019/06/06221750/philips-affiniti50_Left.jpg"
+    },
+    {
+        "id": 5,
+        "name": "ETT",
+        "Duration": "12Hours",
+        "machine": "Most advanced 3.0 ETT",
+        "fee": "4000",
+        "description": "Exercise Test Interpretation (XTI) statements highlight critical values in stress testing for advanced analysis of risk prediction, functional response and ischemia.The new ST/HR hysteresis analysis feature enables increased accuracy1 in detecting coronary artery disease in women and adds confidence in identifying the most appropriate treatment.",
+        "img": "https://www.researchgate.net/profile/Duncan-Wyncoll/publication/51718148/figure/fig3/AS:202837465276433@1425371628717/Endotracheal-tube-with-subglottic-suction-port-placed-posteriorly-and-above-the-cuff-for.png"
+    },
+    {
+        "id": 6,
+        "name": "Smart Dose Technology",
+        "Duration": "5Hours",
+        "machine": "MostEVO Gen 2 features intelligent technology",
+        "fee": "3000",
+        "description": "Revolution EVO Gen 2 features intelligent technology designed to help you acquire high-quality images using lower doses of radiation, contributing to more accurate diagnoses and lower exposures for patients. Dose management tools such as CT 4Kids dose-optimized pediatric reference scan protocols, 3D Dose Modulation, Organ Dose Modulation, Dose Check, DICOM DRSR and more are all at your fingertips. Revolution EVO Gen 2 is also compliant with NEMA XR 25 and XR 29 standards.",
+        "img": "https://www.pharmaceutical-technology.com/wp-content/uploads/static-progressive/nri/pharma/clients/West%20Pharmaceuticals/wp-SmartDose-2-ld.jpg"
+    }
+]
