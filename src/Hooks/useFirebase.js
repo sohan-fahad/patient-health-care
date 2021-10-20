@@ -34,38 +34,19 @@ const useFirebase = () => {
 
     // Function for registration
     const handleRagisterSubmit = e => {
-        e.preventDefault();
         if (password.length < 6) {
             setError("Password should be more than 6 character")
         }
-        console.log("reg", isLoading)
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                const userInfo = result.user
-                setUser(userInfo)
-                verifyEmail()
-                setError("")
-                if (userInfo) {
-                    userInfo.displayName = displayName;
-                    userInfo.phoneNumber = phoneNumber;
-                }
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                setError(errorMessage, errorCode)
-            })
-            .finally(() => {
-                setIsLoading(false)
-            })
+        return createUserWithEmailAndPassword(auth, email, password)
     }
-// function for login
+    // function for login
     const handleLoginSubmit = e => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const userInfo = result.user;
                 console.log(userInfo)
+                console.log(user)
             })
             .catch(err => {
                 setError(err.message)
@@ -86,7 +67,7 @@ const useFirebase = () => {
             })
     }
 
-
+    // function for google singin
     const singInUsingGoole = () => {
         setError("")
         const googleProvider = new GoogleAuthProvider();
@@ -110,10 +91,8 @@ const useFirebase = () => {
 
     // Function for logOut
     const logOut = () => {
-        setIsLoading(true)
         signOut(auth)
             .then(result => { setUser({}) })
-            .finally(() => setIsLoading(false))
     }
 
     return {
@@ -134,6 +113,9 @@ const useFirebase = () => {
         handleLoginSubmit,
         logOut,
         singInUsingGoole,
+        verifyEmail,
+        displayName,
+        phoneNumber
     }
 };
 

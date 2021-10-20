@@ -34,8 +34,11 @@ const Login = () => {
                     <button className="login-btn">Login</button>
                 </form>
                 <p>{error}</p>
-                <Link className="regintration" to="/registration">Create an account?</Link>
-                <button className="google-login" onClick={handleGooleSingin}><i className="fab fa-google"></i> Sing in with Google</button>
+                <Link className="regintration" to="/registration" onClick={()=>setError("")}>Create an account?</Link>
+                <button className="google-login" onClick={() => {
+                    handleGooleSingin()
+                    setError()
+                }}><i className="fab fa-google"></i> Sing in with Google</button>
             </div>
         </div>
     );
