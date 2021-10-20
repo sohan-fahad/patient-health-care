@@ -8,7 +8,7 @@ const Service = ({ service }) => {
         <Container>
             <div className="text-center service">
                 <div className="service-details-img">
-                    <img src={service?.img} alt="" className="w-100 img-fluid " />
+                    <img src={service?.img} alt="" className="img-fluid " />
                 </div>
                 <h4 className="mb-0 mt-3 global-color1">{service?.name}</h4>
                 <p className="mb-0 global-color2">Time Will Take: {service?.Duration}</p>
