@@ -15,7 +15,6 @@ const Login = () => {
         singInUsingGoole()
 
             .then(result => {
-                console.log(result.user)
                 history.push(redirect_url)
                 setError("")
                 setIsLoading(false)
@@ -28,11 +27,11 @@ const Login = () => {
     }
 
     const handleLogin = (e) => {
-        history.push(redirect_url)
         e.preventDefault();
         handleLoginSubmit()
 
             .then(result => {
+                history.push(redirect_url)
                 if (password.legnth < 6) {
                     setError("Password should be more than 6 characters")
                 }

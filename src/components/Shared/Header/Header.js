@@ -7,7 +7,8 @@ import logo from '../../../images/logo.png'
 import './Header.css'
 
 const Header = () => {
-    const { user, logOut } = useAuth()
+    const { user, logOut, displayName } = useAuth()
+    console.log(user)
     return (
         <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top" className="navBar">
             <Container>
@@ -27,7 +28,7 @@ const Header = () => {
                         <Nav.Link as={Link} className="btn-light text-dark me-2" to="/login">Login</Nav.Link>
                     }
                     <Navbar.Text>
-                        {user?.email && user.displayName}
+                        {(user.email || user.displayName) && (user.displayName || displayName)}
                     </Navbar.Text>
 
                 </Navbar.Collapse>
