@@ -6,7 +6,7 @@ import './Doctors.css'
 const Doctors = () => {
     const [doctors, setDoctors] = useState()
     useEffect(() => {
-        fetch('/doctorsDB.json')
+        fetch('https://raw.githubusercontent.com/sohan-fahad/fakeDB/main/doctorsDB')
             .then(res => res.json())
             .then(data => setDoctors(data))
     }, [])

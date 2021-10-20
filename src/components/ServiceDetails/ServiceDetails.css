@@ -2,7 +2,7 @@
 
 .DoctorDetails{
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,14 +10,19 @@
 
 .details-contaier {
     display: grid;
+    height: 100%;
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    margin-top: 20px;
 }
 
-.service-img {
+.serviceDetails-img {
     width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 a;
+}
+.serviceDetails-img img{
+    height: 100%;
+    width: 100%;
 }
 
 .service-info {
@@ -26,7 +31,7 @@
     justify-content: center;
 }
 
-.btn-service {
+.btn-serviceDetails {
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 10px;
@@ -78,7 +83,7 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
-    .service-img{
+    .serviceDetails-img{
         margin: 0 auto;
     }
     .service-info {

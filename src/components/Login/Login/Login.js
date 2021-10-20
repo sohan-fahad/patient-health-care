@@ -6,7 +6,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
     // destrucer data from useAuth
-    const { handleLoginSubmit, singInUsingGoole, error, setError } = useAuth()
+    const { handleLoginSubmit, singInUsingGoole, error, setError, setUser, setIsLoading } = useAuth()
 
     const history = useHistory()
     const location = useLocation()
@@ -18,23 +18,39 @@ const Login = () => {
                 console.log(result.user)
                 history.push(redirect_url)
                 setError("")
+                setIsLoading(false)
+                setUser(result.user)
             })
             .catch(error => {
                 setError(error.message)
 
             })
     }
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        handleLoginSubmit()
+            .then(result => {
+                history.push(redirect_url)
+                const userInfo = result.user;
+                setUser(userInfo)
+                setError("")
+            })
+            .catch(err => {
+                setError(err.message)
+            })
+    }
     return (
         <div className='Login'>
             <div className="login-container text-center ">
                 <h5 className="text-red py-4" >Login Your Account!</h5>
-                <form className="login-form" onSubmit={handleLoginSubmit}>
+                <form className="login-form" onSubmit={handleLogin}>
                     <input type="email" placeholder="Enter Your Email" required />
                     <input type="password" placeholder="Enter Your Password" required />
                     <button className="login-btn">Login</button>
                 </form>
                 <p>{error}</p>
-                <Link className="regintration" to="/registration" onClick={()=>setError("")}>Create an account?</Link>
+                <Link className="regintration" to="/registration" onClick={() => setError("")}>Create an account?</Link>
                 <button className="google-login" onClick={() => {
                     handleGooleSingin()
                     setError()

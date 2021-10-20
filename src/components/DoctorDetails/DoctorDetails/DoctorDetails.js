@@ -6,16 +6,16 @@ import './DoctorDetails.css'
 
 const DoctorDetails = () => {
     const { doctorId } = useParams()
-    const [doctors, setDoctors] = useState()
+    const [doctors, setDoctors] = useState([])
     useEffect(() => {
-        fetch('/doctorsDB.json')
+        fetch('https://raw.githubusercontent.com/sohan-fahad/fakeDB/main/doctorsDB')
             .then(res => res.json())
             .then(data => setDoctors(data))
-    }, [])
+    },
+        [])
 
     const doctor = doctors?.find(doctor => doctor.id == doctorId)
 
-    // const {name, img, description, fee, graduation, specialties} = doctor;
 
     return (
         <div>
@@ -28,7 +28,7 @@ const DoctorDetails = () => {
                         <h2 className="text-red mb-0">{doctor?.name}</h2>
                         <h5 className='my-1 text-blue'>{doctor?.specialties}</h5>
                         <p className="mb-4">{doctor?.graduation}</p>
-                        <p className="fw-light">{doctor?.description}</p>
+                        <p className="fw-light text-justify">{doctor?.description}</p>
                         <h4 className="mt-2 text-blue">Appointment: {doctor?.fee}৳</h4>
                         <Link className="btn-appoinment mt-3">Get An Appointment</Link>
                     </div>

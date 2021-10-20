@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import {Container } from 'react-bootstrap';
 import Service from '../Service/Service';
 import './Services.css'
 
 const Services = () => {
     const [services, setServices] = useState()
     useEffect(() => {
-        fetch("/servicesDB.json")
+        fetch("https://raw.githubusercontent.com/sohan-fahad/fakeDB/main/servicesDB.json")
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
