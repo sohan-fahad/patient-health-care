@@ -6,7 +6,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
     // destrucer data from useAuth
-    const { handleLoginSubmit, singInUsingGoole, error, setError, setUser, setIsLoading } = useAuth()
+    const { handleLoginSubmit, singInUsingGoole, error, setError, setUser, setIsLoading, password } = useAuth()
 
     const history = useHistory()
     const location = useLocation()
@@ -30,7 +30,11 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         handleLoginSubmit()
+
             .then(result => {
+                if (password.legnth < 6) {
+                    setError("Password should be more than 6 characters")
+                }
                 history.push(redirect_url)
                 const userInfo = result.user;
                 setUser(userInfo)

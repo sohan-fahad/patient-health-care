@@ -8,7 +8,7 @@ const Registration = () => {
     const location = useLocation()
     const redirect_url = location.state?.from || "/home"
     // destrucer the value from context object
-    const { handleName, handlePhoneNumber, handleEmail, handlePassword, handleRagisterSubmit, error, singInUsingGoole, setError, setUser, verifyEmail, setIsLoading, displayName, phoneNumber } = useAuth()
+    const { handleName, handlePhoneNumber, handleEmail, handlePassword, handleRagisterSubmit, error, singInUsingGoole, setError, setUser, verifyEmail, setIsLoading, displayName, phoneNumber, password } = useAuth()
 
     const handleGooleSingin = () => {
         singInUsingGoole()
@@ -29,6 +29,9 @@ const Registration = () => {
         e.preventDefault();
         handleRagisterSubmit()
             .then((result) => {
+                if(password.legnth <6 ) {
+                    setError("Password should be more than 6 characters")
+                }
                 const userInfo = result.user
                 console.log(userInfo)
                 setUser(userInfo)
@@ -44,7 +47,7 @@ const Registration = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                setError(errorMessage, errorCode)
+                // setError(errorMessage, errorCode)
             })
     }
 
