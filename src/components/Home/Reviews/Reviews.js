@@ -10,7 +10,7 @@ const Reviews = () => {
     const patient3 = 'https://images.pexels.com/users/avatars/1144493/darius-krause-214.jpeg?auto=compress&fit=crop&h=256&w=256'
 
     return (
-        <div className="Reviews" id="reviews">
+        <div className="Reviews mt-5" id="reviews">
             <Carousel>
                 <Carousel.Item>
                     <img

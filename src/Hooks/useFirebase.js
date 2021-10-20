@@ -44,15 +44,6 @@ const useFirebase = () => {
         // e.preventDefault();
         setIsLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
-            // .then(result => {
-            //     const userInfo = result.user;
-            //     setUser(userInfo)
-            //     setIsLoading(false)
-            //     setError("")
-            // })
-            // .catch(err => {
-            //     setError(err.message)
-            // })
 
     }
 
