@@ -28,7 +28,7 @@ const ServiceDetails = () => {
                         <p className="mb-4">{service?.machine}</p>
                         <p className="fw-light">{service?.description}</p>
                         <h4 className="mt-2 text-blue">Checkup: {service?.fee}৳</h4>
-                        <Link className="btn-serviceDetails mt-3">Get The Service</Link>
+                        <button className="btn-serviceDetails mt-3">Get The Service</button>
                     </div>
                 </div>
             </Container>
