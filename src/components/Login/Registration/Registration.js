@@ -26,6 +26,7 @@ const Registration = () => {
     }
 
     const handleRegister = (e) => {
+        history.push(redirect_url)
         e.preventDefault();
         handleRagisterSubmit()
             .then((result) => {
@@ -41,7 +42,6 @@ const Registration = () => {
                     userInfo.displayName = displayName;
                     userInfo.phoneNumber = phoneNumber;
                 }
-                history.push(redirect_url)
                 setIsLoading(false)
             })
             .catch((error) => {

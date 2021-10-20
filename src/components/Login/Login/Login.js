@@ -28,6 +28,7 @@ const Login = () => {
     }
 
     const handleLogin = (e) => {
+        history.push(redirect_url)
         e.preventDefault();
         handleLoginSubmit()
 
@@ -35,7 +36,6 @@ const Login = () => {
                 if (password.legnth < 6) {
                     setError("Password should be more than 6 characters")
                 }
-                history.push(redirect_url)
                 const userInfo = result.user;
                 setUser(userInfo)
                 setError("")

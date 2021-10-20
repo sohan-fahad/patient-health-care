@@ -92,7 +92,6 @@ const useFirebase = () => {
         setUser,
         setError,
         isLoading,
-        displayName,
         error,
         email,
         phoneNumber,
@@ -107,7 +106,6 @@ const useFirebase = () => {
         singInUsingGoole,
         verifyEmail,
         displayName,
-        phoneNumber
     }
 };
 
