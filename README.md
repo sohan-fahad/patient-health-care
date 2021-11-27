@@ -21,4 +21,10 @@ Patient Health Care can join the platform using our simple on boarding process. 
 * Specialist Advice 
 * Diegonestic Services
 
+## What will can user do?
+* Patients can choose their service.
+* Patients can see the service details.
+* Before see detail of any services, the patient must be logged in.
+
+
 ### IF You Have Any Quention, Just Contact Us.
